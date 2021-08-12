@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>2 Depth Full Slide Down Nav</title>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+ <style>
+  body {
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;  
+  }
+
+  .container {
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+  }
+
+  header {
+    background: #ddd;
+    height: 80px;
+    border-bottom: 1px solid #000;
+  }
+
+  header .container {
+    /* outline: 1px solid #999; */
+    display: flex;
+    padding: 0;
+    z-index: 999;
+  }
+
+  header h1 {
+    margin-top: 20px;
+    margin-right: auto;
+    position: relative;
+  }
+
+  .depth1 {
+    display: flex; 
+    /* outline: 1px solid red; */
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .depth1 > li {
+    width: 120px;
+    /* background: #abc; */
+  }
+
+  .depth2 {
+    margin-top: 32px;
+    transition: 0.4s;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .depth2.show {
+    opacity: 1;
+    max-height: 200px;
+  }
+
+  .depth2 > li {
+    margin-top: 10px;
+  }
+
+  .depth2 > li > a {
+    display: block;
+    padding: 5px;
+  }
+
+  /* 2단계 네비게이션 배경 */
+  .nav_bg {
+    position: absolute;
+    left: 0; top: 80px;
+    height: 0;
+    width: 100%;
+    background: #eee;
+    transition: 0.4s;
+    z-index: 999;
+    overflow: hidden;
+  }
+
+  .nav_bg.show {
+    height: 170px;
+  }
+
+ </style> 
+</head>
+<body>
+  <header>
+    <div class="nav_bg">2단계 네비게이션 배경</div>
+    <div class="container">
+      <h1>logo</h1>
+      <nav>
+        <ul class="depth1">
+          <li><a href="#">menu</a>
+            <ul class="depth2">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li><a href="#">menu</a>
+            <ul class="depth2">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li><a href="#">menu</a>
+            <ul class="depth2">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li><a href="#">menu</a>
+            <ul class="depth2">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2>2 Depth Full Slide Down Navigation</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit excepturi soluta, molestias iure architecto at ab nostrum illum, facilis maiores corrupti doloribus itaque eos? Voluptates quas necessitatibus itaque quos tempore?</p>
+
+    </div>
+  </section>
+
+  <script>
+    $('nav').on('mouseover', function(){
+      $('.depth2, .nav_bg').addClass('show')
+    })
+
+    $('nav').on('mouseout', function(){
+      $('.depth2, .nav_bg').removeClass('show')
+    })
+
+  </script>
+</body>
+</html>
