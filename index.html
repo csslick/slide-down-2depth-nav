@@ -20,6 +20,7 @@
 
   ul {
     list-style-type: none;  
+    padding: 0;
   }
 
   .container {
@@ -56,8 +57,9 @@
   }
 
   .depth1 > li {
-    width: 120px;
+    margin-left: 4em;
     /* background: #abc; */
+    /* outline: 1px solid; */
   }
 
   .depth2 {
@@ -79,7 +81,11 @@
 
   .depth2 > li > a {
     display: block;
-    padding: 5px;
+    padding: 5px 0;
+  }
+
+  .depth2 > li > a:hover {
+    background: #ccc;
   }
 
   /* 2단계 네비게이션 배경 */
@@ -107,29 +113,29 @@
       <h1>logo</h1>
       <nav>
         <ul class="depth1">
-          <li><a href="#">menu</a>
+          <li><a href="#">헬로그룹</a>
             <ul class="depth2">
+              <li><a href="#">그룹소개</a></li>
+              <li><a href="#">인사말</a></li>
               <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li><a href="#">사업분야</a>
+            <ul class="depth2">
+              <li><a href="#">제조</a></li>
+              <li><a href="#">미디어서비스</a></li>
+              <li><a href="#">레저</a></li>
+            </ul>
+          </li>
+          <li><a href="#">지속가능경영</a>
+            <ul class="depth2">
+              <li><a href="#">윤리준법경영</a></li>
+              <li><a href="#">상생경영</a></li>
               <li><a href="#">sub</a></li>
               <li><a href="#">sub</a></li>
             </ul>
           </li>
-          <li><a href="#">menu</a>
-            <ul class="depth2">
-              <li><a href="#">sub</a></li>
-              <li><a href="#">sub</a></li>
-              <li><a href="#">sub</a></li>
-            </ul>
-          </li>
-          <li><a href="#">menu</a>
-            <ul class="depth2">
-              <li><a href="#">sub</a></li>
-              <li><a href="#">sub</a></li>
-              <li><a href="#">sub</a></li>
-              <li><a href="#">sub</a></li>
-            </ul>
-          </li>
-          <li><a href="#">menu</a>
+          <li><a href="#">오시는길</a>
             <ul class="depth2">
               <li><a href="#">sub</a></li>
               <li><a href="#">sub</a></li>
